@@ -1,0 +1,1 @@
+<?xml version="1.0"?><dataset><products><product><id>1</id><name>Bar</name><price>100</price><category>Foo</category></product><product><id>2</id><name>Baz</name><price>200</price><category>FooBar</category></product></products></dataset>
