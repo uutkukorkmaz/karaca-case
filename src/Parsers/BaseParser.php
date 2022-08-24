@@ -11,7 +11,7 @@ use KaracaCase\Exceptions\MethodDoesNotExistsException;
 class BaseParser
 {
 
-    public function __construct(protected mixed $data = null)
+    public function __construct(public mixed $data = null)
     {
     }
 
