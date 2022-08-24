@@ -14,7 +14,7 @@
     }
   ],
   "require": {
-    "php": "8.1",
+    "php": "8.1^",
     "ext-simplexml": "*",
     "ext-dom": "*",
     "illuminate/support": "^9.26",
