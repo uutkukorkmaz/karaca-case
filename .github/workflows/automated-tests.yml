@@ -1,0 +1,31 @@
+name: Test
+on: [ push ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{github.head_ref}}
+
+      - name: Setup PHP
+        uses: shivammathur/php-setup@v2
+        with:
+          php-version: "8.1"
+          extensions: simplexml, mbstring, dom, fileinfo, intl, soap, xdebug, gd
+          coverage: xdebug
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.composer/cache/files
+          key: dependencies-composer-${{ hashFiles('composer.json') }}
+
+      - name: Install Composer dependencies
+        run: composer install --no-ansi --no-interaction --no-suggest --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Run Tests
+        run: composer test
