@@ -3,7 +3,6 @@
 namespace KaracaCase\Parsers;
 
 use Illuminate\Support\Str;
-use KaracaCase\Models\BaseModel;
 use Illuminate\Support\Collection;
 use KaracaCase\Parsers\ParserAbstract as Parser;
 
@@ -27,7 +26,6 @@ class XmlParser extends Parser
     {
         if (is_null($xml)) {
             $xml = new \SimpleXMLElement('<?xml version="1.0"?><dataset/>');
-            $xml->addAttribute('xmlns', 'http://www.w3.org/2001/XMLSchema');
         }
         foreach ($data as $key => $value) {
             switch (true) {
