@@ -19,7 +19,6 @@ class JsonParser extends Parser
 
     public function encode($args = 0)
     {
-        header('Content-Type: application/json');
         $args = JSON_PRESERVE_ZERO_FRACTION | $args;
         switch (gettype($this->data)) {
             case 'array':

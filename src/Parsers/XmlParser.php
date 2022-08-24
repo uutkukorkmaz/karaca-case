@@ -20,8 +20,6 @@ class XmlParser extends Parser
     public function encode($args = [])
     {
         $xml = $this->createXML($this->data);
-        header('Content-Type: application/xml');
-
         return $xml->asXML();
     }
 
