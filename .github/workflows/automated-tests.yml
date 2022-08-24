@@ -12,7 +12,7 @@ jobs:
           ref: ${{github.head_ref}}
 
       - name: Setup PHP
-        uses: shivammathur/php-setup@v2
+        uses: shivammathur/setup-php@v2
         with:
           php-version: "8.1"
           extensions: simplexml, mbstring, dom, fileinfo, intl, soap, xdebug, gd
