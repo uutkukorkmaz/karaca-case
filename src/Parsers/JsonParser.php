@@ -20,18 +20,11 @@ class JsonParser extends Parser
     public function encode($args = 0)
     {
         $args = JSON_PRESERVE_ZERO_FRACTION | $args;
-        switch (gettype($this->data)) {
-            case 'array':
-                return json_encode($this->data, $args);
-            case 'object':
-                if ($this->data instanceof Collection) {
-                    return $this->data->toJson($args);
-                }
 
-                return json_encode($this->data, $args);
-            default:
-                return $this->data;
-        }
+        return match (gettype($this->data)) {
+            'array' => json_encode($this->data, $args),
+            default => $this->data,
+        };
     }
 
 
