@@ -20,7 +20,7 @@
     "phpunit/phpunit": "^9.5"
   },
   "scripts": {
-    "test": "vendor/bin/phpunit tests --configuration ./phpunit.xml",
+    "test": "vendor/bin/phpunit tests --configuration ./phpunit.xml --coverage-text --testdox",
     "serve": "php -S 127.0.0.1:8080"
   }
 }
